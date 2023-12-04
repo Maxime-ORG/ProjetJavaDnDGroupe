@@ -20,7 +20,7 @@ public class BoardController {
         restTemplate = new RestTemplate();
         board = new Board();
         mapper = new ObjectMapper();
-        fillBoard();
+//        fillBoard();
     }
 
     @GetMapping("/test")
@@ -59,24 +59,27 @@ public class BoardController {
         addOffensive("potion");
         addOffensive("weapon");
         addOffensive("spell");
-//        addEnnemy();
+        addEnnemy();
         int nbrOfEmptyCases = nbrOfCells - board.getBoard().size();
         for (int i = 0; i < nbrOfEmptyCases; i++) {
             addEmptyCell();
         }
+        Collections.shuffle(board.getBoard());
     }
 
-    //
-//    public void addEnnemy(String type){
-//        List<Offensive> response = restTemplate.getForObject("http://localhost:8090/all/" + type, List.class);
-//
-//        List<Offensive> list = mapper.convertValue(response, new TypeReference<List<Offensive>>() {});
-//
-//        for (Ennemy ennemy : list) {
-//            board.getBoard().add(ennemy);
-//        }
-//    }
-//
+
+    public void addEnnemy() {
+        List<Enemy> response = restTemplate.getForObject("http://172.22.114.55:8081/api/enemy", List.class);
+        List<Enemy> list = mapper.convertValue(response, new TypeReference<List<Enemy>>() {
+        });
+
+        for (int i = 0; i < 3; i++) {
+            for (Enemy ennemy : list) {
+                board.getBoard().add(ennemy);
+            }
+        }
+    }
+
     public void addEmptyCell() {
         board.getBoard().add(new EmptyCell());
     }
