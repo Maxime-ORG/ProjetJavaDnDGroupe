@@ -65,6 +65,7 @@ public class BoardController {
         for (int i = 0; i < 3; i++) {
             for (Enemy ennemy : list) {
                 board.getBoard().add(ennemy);
+
             }
         }
     }
