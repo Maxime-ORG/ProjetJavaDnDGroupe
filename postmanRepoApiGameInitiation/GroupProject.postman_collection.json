@@ -1,0 +1,252 @@
+{
+	"info": {
+		"_postman_id": "90d28e7d-d3cd-4512-b997-a35a61a97cd0",
+		"name": "GroupProject",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31329967"
+	},
+	"item": [
+		{
+			"name": "ListAllEnemy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/enemy",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"enemy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListAllHero",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/hero",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"hero"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetEnemyById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/enemy/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"enemy",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetHeroById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/hero/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"hero",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateEnemy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \r\n\r\n\"nom\": \"maximo\",\r\n\r\n\"type\": \"gobelin\",\r\n\r\n\"point_de_vie\": 8,\r\n\r\n\"force_attaque\": 7\r\n\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/enemy",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"enemy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateHero",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \r\n\r\n\"nom\": \"fabian\",\r\n\r\n\"type\": \"magicien\",\r\n\r\n\"point_de_vie\": 9,\r\n\r\n\"force_attaque\": 10\r\n\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/hero",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"hero"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpgradeEnemyById",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \r\n\r\n\"nom\": \"maximo\",\r\n\r\n\"type\": \"sorcier\",\r\n\r\n\"point_de_vie\": 9,\r\n\r\n\"force_attaque\": 9\r\n\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/enemy/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"enemy",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpgradeHeroById",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \r\n\r\n\"nom\": \"fabu\",\r\n\r\n\"type\": \"guerrier\",\r\n\r\n\"point_de_vie\": 9,\r\n\r\n\"force_attaque\": 9\r\n\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/hero/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"hero",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteEnemyById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/enemy/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"enemy",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteHeroyById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/hero/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"hero",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
