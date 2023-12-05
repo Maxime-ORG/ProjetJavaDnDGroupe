@@ -10,15 +10,20 @@ public class Board {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @ManyToOne
-    private Cell cells;
+    private String cells;
 
-    public Board(Cell cells) {
-        this.cells = cells;
-    }
 
     public Board() {
 
+    }
+
+    public Board(int id, String cells) {
+        this.id = id;
+        this.cells = cells;
+    }
+
+    public Board(String cells) {
+        this.cells = cells;
     }
 
     public int getId() {
@@ -29,11 +34,19 @@ public class Board {
         this.id = id;
     }
 
-    public Cell getCells() {
+    public String getCells() {
         return cells;
     }
 
-    public void setCells(Cell cells) {
+    public void setCells(String cells) {
         this.cells = cells;
+    }
+
+    @Override
+    public String toString() {
+        return "Board{" +
+                "id=" + id +
+                ", cells='" + cells + '\'' +
+                '}';
     }
 }

@@ -1,25 +1,27 @@
 package com.example.apicurrentgame.web.controller;
 
-import com.example.apicurrentgame.model.Personnage;
+import com.example.apicurrentgame.model.Board;
+import com.example.apicurrentgame.model.Hero;
 import com.fasterxml.jackson.databind.ser.FilterProvider;
 import com.fasterxml.jackson.databind.ser.impl.SimpleBeanPropertyFilter;
 import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 import org.springframework.http.converter.json.MappingJacksonValue;
 import org.springframework.web.bind.annotation.*;
-import com.example.apicurrentgame.web.dao.PersonnageDao;
+import com.example.apicurrentgame.web.dao.HeroDao;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.Optional;
 
 @RestController
-public class PersonnageController {
-    private PersonnageDao personnageDao;
-    public PersonnageController(PersonnageDao personnageDao) {
-        this.personnageDao = personnageDao;
+public class HeroController {
+    private HeroDao heroDao;
+    public HeroController(HeroDao heroDao) {
+        this.heroDao = heroDao;
     }
 
-    @GetMapping("/Personnages")
+    @GetMapping("/heros")
     public MappingJacksonValue listePersonnages() {
-        Iterable<Personnage> personnage = personnageDao.findAll();
+        Iterable<Hero> personnage = heroDao.findAll();
         SimpleBeanPropertyFilter monFiltre = SimpleBeanPropertyFilter.serializeAllExcept("life");
         FilterProvider listDeNosFiltres = new SimpleFilterProvider().addFilter("monFiltreDynamique", monFiltre);
         MappingJacksonValue personnageFiltres = new MappingJacksonValue(personnage);
@@ -28,41 +30,50 @@ public class PersonnageController {
         return personnageFiltres;
     }
 
-    @PostMapping("/ChargerPersonnage")
-    public void ChargerPersonnage(@RequestBody Personnage personnage) {
-        personnageDao.save(personnage);
+    @GetMapping(value = "/hero/{id}")
+    public Optional<Hero> afficherUnHero(@PathVariable int id)
+    {
+        return heroDao.findById(id);
+    }
+
+    @PostMapping("/ChargeHero/{id}")
+    public void ChargerPersonnage(@PathVariable int id) {
+        RestTemplate restTemplate = new RestTemplate();
+        Hero hero = restTemplate.getForObject("http://172.22.114.55:8081/api/hero/"+id, com.example.apicurrentgame.model.Hero.class);
+        System.out.println(hero);
+        heroDao.save(hero);
     }
 
     @PutMapping("/avancerPersonnage/{id}/{valeurDee}")
     public void avancerPersonnage(@PathVariable int id, @PathVariable int valeurDee) {
-        Optional<Personnage> personnage1 = personnageDao.findById(id);
+        Optional<Hero> personnage1 = heroDao.findById(id);
         System.out.println(personnage1.get().getType());
         personnage1.get().setPosition(personnage1.get().getPosition()+valeurDee);
-        personnageDao.save(personnage1.get());
+        heroDao.save(personnage1.get());
     }
 
     @PutMapping("/reculerPersonnage/{id}/{valeurDee}")
     public void reculerPersonnage(@PathVariable int id, @PathVariable int valeurDee) {
-        Optional<Personnage> personnage1 = personnageDao.findById(id);
+        Optional<Hero> personnage1 = heroDao.findById(id);
         System.out.println(personnage1.get().getType());
         personnage1.get().setPosition(personnage1.get().getPosition()-valeurDee);
-        personnageDao.save(personnage1.get());
+        heroDao.save(personnage1.get());
     }
 
     @PutMapping("/PersonnagePrendsDegats/{id}/{degats}")
     public void PersonnagePrendsDegats(@PathVariable int id, @PathVariable int degats) {
-        Optional<Personnage> personnage1 = personnageDao.findById(id);
+        Optional<Hero> personnage1 = heroDao.findById(id);
         System.out.println(personnage1.get().getType());
-        personnage1.get().setLife(personnage1.get().getLife()-degats);
-        personnageDao.save(personnage1.get());
+        personnage1.get().setPoint_de_vie(personnage1.get().getPoint_de_vie()-degats);
+        heroDao.save(personnage1.get());
     }
 
     @PutMapping("/PersonnageRecupereVie/{id}/{vie}")
     public void PersonnageRecupereVie(@PathVariable int id, @PathVariable int vie) {
-        Optional<Personnage> personnage1 = personnageDao.findById(id);
+        Optional<Hero> personnage1 = heroDao.findById(id);
         System.out.println(personnage1.get().getType());
-        personnage1.get().setLife(personnage1.get().getLife()+vie);
-        personnageDao.save(personnage1.get());
+        personnage1.get().setPoint_de_vie(personnage1.get().getPoint_de_vie()+vie);
+        heroDao.save(personnage1.get());
     }
 
     @GetMapping(value = "/test")
