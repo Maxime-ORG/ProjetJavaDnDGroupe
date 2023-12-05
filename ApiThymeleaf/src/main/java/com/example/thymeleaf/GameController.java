@@ -36,4 +36,13 @@ public class GameController {
         return "offensive_list";
     }
 
+    @GetMapping("/heroes_list")
+    String getHeroesList(Model model){
+        model.addAttribute("heroes_list_welcome_message", "Liste des héros");
+        List response = restTemplate.getForObject("http://172.22.114.55:8081/api/hero", List.class);
+
+        model.addAttribute("heroes_list", response);
+        return "heroes_list";
+    }
+
 }
