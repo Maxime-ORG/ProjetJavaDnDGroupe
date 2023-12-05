@@ -32,10 +32,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8081/api/hero",
+					"raw": "http://172.22.114.55:8081/api/hero",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"172",
+						"22",
+						"114",
+						"55"
 					],
 					"port": "8081",
 					"path": [
@@ -52,10 +55,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8081/api/enemy/1",
+					"raw": "http://172.22.114.55:8081/api/enemy/1",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"172",
+						"22",
+						"114",
+						"55"
 					],
 					"port": "8081",
 					"path": [
@@ -103,10 +109,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8081/api/enemy",
+					"raw": "http://172.22.114.55:8081/api/enemy",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"172",
+						"22",
+						"114",
+						"55"
 					],
 					"port": "8081",
 					"path": [
@@ -132,10 +141,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8081/api/hero",
+					"raw": "http://172.22.114.55:8081/api/hero",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"172",
+						"22",
+						"114",
+						"55"
 					],
 					"port": "8081",
 					"path": [
@@ -161,10 +173,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8081/api/enemy/2",
+					"raw": "http://172.22.114.55:8081/api/enemy/2",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"172",
+						"22",
+						"114",
+						"55"
 					],
 					"port": "8081",
 					"path": [
@@ -191,10 +206,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8081/api/hero/2",
+					"raw": "http://172.22.114.55:8081/api/hero/2",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"172",
+						"22",
+						"114",
+						"55"
 					],
 					"port": "8081",
 					"path": [
@@ -212,10 +230,13 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8081/api/enemy/2",
+					"raw": "http://172.22.114.55:8081/api/enemy/2",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"172",
+						"22",
+						"114",
+						"55"
 					],
 					"port": "8081",
 					"path": [
@@ -233,10 +254,13 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8081/api/hero/2",
+					"raw": "http://172.22.114.55:8081/api/hero/2",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"172",
+						"22",
+						"114",
+						"55"
 					],
 					"port": "8081",
 					"path": [
