@@ -15,11 +15,17 @@ public class OffensiveController {
     }
 
     @GetMapping("/all")
-    public List getAllOffensive(){
+    public List getAllOffensive() {
         return offensiveDao.findAll();
     }
+
     @GetMapping("all/{type}")
-    public List getAllByType(@PathVariable String type){
+    public List getAllByType(@PathVariable String type) {
         return offensiveDao.findAllByType(type);
+    }
+
+    @GetMapping("/{type}/{id}")
+    public Offensive getOffensive(@PathVariable String type, @PathVariable int id) {
+        return offensiveDao.findAllByTypeAndId(type, id);
     }
 }

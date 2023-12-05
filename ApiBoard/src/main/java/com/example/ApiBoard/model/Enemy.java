@@ -4,14 +4,13 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class Enemy implements Cell{
 
-    @JsonIgnore
     private int id;
-
+    @JsonIgnore
     private String nom;
     private String type;
-
+    @JsonIgnore
     private int point_de_vie;
-
+    @JsonIgnore
     private int force_attaque;
 
     public int getId() {

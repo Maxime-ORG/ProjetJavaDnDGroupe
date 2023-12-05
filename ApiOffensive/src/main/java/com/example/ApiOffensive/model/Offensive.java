@@ -7,10 +7,11 @@ import jakarta.persistence.Id;
 @Entity
 public class Offensive {
     @Id
-    @JsonIgnore
     private int id;
+
     private String name;
     private String type;
+
     private int value;
 
     public Offensive() {

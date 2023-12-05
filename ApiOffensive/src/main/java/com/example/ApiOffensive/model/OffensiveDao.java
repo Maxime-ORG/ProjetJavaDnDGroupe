@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface OffensiveDao extends JpaRepository<Offensive, Integer> {
     public List findAllByType(String type);
+    public Offensive findAllByTypeAndId(String type, int id);
 }

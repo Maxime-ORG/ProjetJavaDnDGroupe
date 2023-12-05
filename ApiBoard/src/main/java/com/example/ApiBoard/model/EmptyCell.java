@@ -2,15 +2,17 @@ package com.example.ApiBoard.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-public class EmptyCell implements Cell{
+public class EmptyCell implements Cell {
 
+    private int id;
     @JsonIgnore
     private String name;
     private String type;
     @JsonIgnore
     private int value;
 
-    public EmptyCell(){
+    public EmptyCell() {
+        id = 99;
         type = "empty cell";
     }
 
@@ -39,4 +41,11 @@ public class EmptyCell implements Cell{
         this.value = value;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

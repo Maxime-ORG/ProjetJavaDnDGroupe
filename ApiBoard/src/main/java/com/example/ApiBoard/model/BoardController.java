@@ -59,7 +59,7 @@ public class BoardController {
         addOffensive("potion");
         addOffensive("weapon");
         addOffensive("spell");
-        addEnnemy();
+//        addEnnemy();
         int nbrOfEmptyCases = nbrOfCells - board.getBoard().size();
         for (int i = 0; i < nbrOfEmptyCases; i++) {
             addEmptyCell();

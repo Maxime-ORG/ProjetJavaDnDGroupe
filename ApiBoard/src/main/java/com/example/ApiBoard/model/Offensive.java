@@ -1,9 +1,14 @@
 package com.example.ApiBoard.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class Offensive implements Cell {
+    private int id;
+    @JsonIgnore
     private String name;
     private String type;
+    @JsonIgnore
     private int value;
 
     public Offensive() {
@@ -33,4 +38,11 @@ public class Offensive implements Cell {
         this.value = value;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }
