@@ -12,7 +12,7 @@ import java.util.List;
 public class GameController {
     private RestTemplate restTemplate;
     GameController(){
-
+        restTemplate = new RestTemplate();
     }
 
     @GetMapping("/home")
@@ -29,9 +29,10 @@ public class GameController {
 
     @GetMapping("/offensive_list")
     String getOffensiveList(Model model){
-        List response = restTemplate.getForObject("http://localhost:8090/all", List.class);
         model.addAttribute("offensive_list_welcome_message", "Liste des équipements");
-        model.addAttribute("offensive_list", ArrayList(response));
+        List response = restTemplate.getForObject("http://localhost:8090/all", List.class);
+
+        model.addAttribute("offensive_list", response);
         return "offensive_list";
     }
 
