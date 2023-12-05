@@ -20,28 +20,17 @@ public class BoardController {
         restTemplate = new RestTemplate();
         board = new Board();
         mapper = new ObjectMapper();
-//        fillBoard();
     }
 
-    @GetMapping("/test")
+    @GetMapping("/board")
     public Board getBoard() {
         return board;
     }
 
-    @GetMapping(value = "/{nbreOfCells}", produces = "application/json")
+    @GetMapping(value = "/board/{nbreOfCells}", produces = "application/json")
     public List<Cell> testBoard(@PathVariable int nbreOfCells) {
         createBoard(nbreOfCells);
         return board.getBoard();
-    }
-
-
-    public void fillBoard() {
-        addOffensive("potion");
-        addOffensive("weapon");
-        addOffensive("spell");
-//        addEnnemy();
-//        addEmptyCell();
-        Collections.shuffle(board.getBoard());
     }
 
     public void addOffensive(String type) {
@@ -59,7 +48,7 @@ public class BoardController {
         addOffensive("potion");
         addOffensive("weapon");
         addOffensive("spell");
-//        addEnnemy();
+        addEnnemy();
         int nbrOfEmptyCases = nbrOfCells - board.getBoard().size();
         for (int i = 0; i < nbrOfEmptyCases; i++) {
             addEmptyCell();
