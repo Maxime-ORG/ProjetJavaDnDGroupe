@@ -8,10 +8,12 @@
 </head>
 <body>
 <div class="mb-3 "
-     style=" flex-direction: column; margin: 2rem auto; width: 500px; border:solid 1px; border-radius: 15px ;display: flex; justify-content: center; align-items: center">
-    <h1 style="margin-top: 2rem" th:text="'Vous êtes sur la case ' + ${actual_cell}"/>
-    <p>Il y a une arme par terre !</p>
-    <a style="margin: 2rem 0" class="btn btn-large btn-success" th:href="@{game}">Prendre l'arme et jeter les dés</a>
+     style=" flex-direction: column; margin: 2rem auto; width: 1000px; border:solid 1px; border-radius: 15px ;display: flex; justify-content: center; align-items: center">
+    <h1 style="margin-top: 2rem" th:text="'Vous êtes sur une ' + ${actual_cell.type}"/>
+    <p th:text="'Vous avez fait ' + ${dado}'.'"/>
+    <p>Ok bro, passe ton chemin</p>
+    <p th:text="'Vie du héros : '  + ${life}"> </p>
+    <a style="margin: 2rem 0" class="btn btn-large btn-success" th:href="@{game}">Chiller et jeter les dés</a>
 </div>
 
 </body>
