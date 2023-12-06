@@ -7,13 +7,19 @@
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-<h1 th:text="${title}"/>
-<p th:text="${welcome}"/>
-<a class="btn btn-large btn-success" th:href="@{start}">Start</a>
-<a class="btn btn-large btn-success"  th:href="@{create_player}">Créer un héros</a>
-<a class="btn btn-large btn-success"  th:href="@{heroes_list}">Afficher la liste des héros</a>
-<a class="btn btn-large btn-success"  th:href="@{offensive_list}">Afficher la liste des équipements offensifs</a>
-
+<div class="mb-3 "
+     style=" flex-direction: column; margin: 2rem auto; width: 500px; border:solid 1px; border-radius: 15px ;display: flex; justify-content: center; align-items: center">
+    <h1 style="margin-top: 2rem" th:text="${title}"/>
+    <p th:text="${welcome}"/>
+    <div style="display: flex; flex-direction: column; padding: 2rem 0; margin: 2rem">
+        <a style="margin: 2rem 0" class="btn btn-large btn-success" th:href="@{start}">Start</a>
+        <a style="margin: 2rem 0" class="btn btn-large btn-success" th:href="@{create_player}">Créer un héros</a>
+        <a style="margin: 2rem 0" class="btn btn-large btn-success" th:href="@{heroes_list}">Afficher la liste des
+            héros</a>
+        <a style="margin: 2rem 0" class="btn btn-large btn-success" th:href="@{offensive_list}">Afficher la liste des
+            équipements offensifs</a>
+    </div>
+</div>
 
 </body>
 </html>
