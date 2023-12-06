@@ -8,13 +8,11 @@
 </head>
 <body>
 <div class="mb-3 "
-     style=" flex-direction: column; margin: 2rem auto; width: 500px; border:solid 1px; border-radius: 15px ;display: flex; justify-content: center; align-items: center">
+     style=" flex-direction: column; margin: 2rem auto; width: 1000px; border:solid 1px; border-radius: 15px ;display: flex; justify-content: center; align-items: center">
     <h1 style="margin-top: 2rem" th:text="${start_game_title}"/>
-    <p th:text="'Nom : '+${hero.nom}"/>
-    <p th:text="'Classe : '+${hero.type}"/>
-    <p th:text="'PV : '+${hero.point_de_vie}"/>
-    <p th:text="'Strength : '+${hero.force_attaque}"/>
-    <a style="margin: 2rem 0" class="btn btn-large btn-success" th:href="@{game}">Commencer la partie</a>
+    <p th:text="'Vous avez fait ' + ${dado}"/>
+    <p th:text="'Vous êtes sur la case ' + ${actual_cell.type}"/>
+    <a style="margin: 2rem 0" class="btn btn-large btn-success" th:href="@{game}">Lancer les dados</a>
 </div>
 
 </body>

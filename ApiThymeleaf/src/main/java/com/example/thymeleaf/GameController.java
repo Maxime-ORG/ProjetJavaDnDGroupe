@@ -1,5 +1,7 @@
 package com.example.thymeleaf;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,13 +12,16 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Controller
 public class GameController {
     private RestTemplate restTemplate;
+    private ObjectMapper mapper;
 
     GameController() {
         restTemplate = new RestTemplate();
+        mapper = new ObjectMapper();
     }
 
     @GetMapping("/home")
@@ -62,17 +67,47 @@ public class GameController {
         model.addAttribute("created_player_title", "Personnage créé");
         model.addAttribute("heroForm", heroForm);
 
-            HeroForm response = restTemplate.postForObject("http://172.22.114.55:8081/api/hero", heroForm, HeroForm.class);
+        HeroForm response = restTemplate.postForObject("http://172.22.114.55:8081/api/hero", heroForm, HeroForm.class);
 
         return "created_player";
     }
 
     @GetMapping("/start")
-    public String start(Model model){
+    public String start(Model model) {
         model.addAttribute("start_game_title", "Voici votre héros :");
-        ResponseEntity<String> response = restTemplate.getForEntity("http://172.22.114.69:8082/start/hero", String.class);
-        model.addAttribute("hero", response.getBody());
+        Cell response = restTemplate.getForObject("http://172.22.114.69:8082/start/hero", Cell.class);
+
+        model.addAttribute("hero", response);
+
         return "start";
+    }
+
+
+
+    @GetMapping("/game")
+    public String game(Model model) {
+        model.addAttribute("start_game_title", "C'EST PARTI FUME LES ENNEMIS !");
+        Cell response = restTemplate.getForObject("http://172.22.114.69:8082/play/4/2", Cell.class);
+        // dado
+        int dado = restTemplate.getForObject("http://172.22.114.69:8082/dado", int.class);
+
+
+        model.addAttribute("actual_cell", response);
+        model.addAttribute("dado", dado);
+
+//        if (response.getType().equals("empty cell")){
+//            return "empty_cell";
+//        } else if (response.getType().equals("potion")) {
+//            return "potion";
+//        } else if (response.getType().equals("spell")) {
+//            return "spell";
+//        } else if (response.getType().equals("weapon")) {
+//            return "weapon";
+//        } else if (response.getType().equals("gobelin") || response.getType().equals("dragon") ||response.getType().equals("sorcier")) {
+//            return "ennemy";
+//        }
+
+        return "game";
     }
 
 }

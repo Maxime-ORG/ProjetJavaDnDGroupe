@@ -62,12 +62,10 @@ public class BoardController {
         List<Enemy> list = mapper.convertValue(response, new TypeReference<List<Enemy>>() {
         });
 
-        for (int i = 0; i < 3; i++) {
-            for (Enemy ennemy : list) {
-                board.getBoard().add(ennemy);
-
-            }
+        for (Enemy enemy : list) {
+            board.getBoard().add(enemy);
         }
+
     }
 
     public void addEmptyCell() {
