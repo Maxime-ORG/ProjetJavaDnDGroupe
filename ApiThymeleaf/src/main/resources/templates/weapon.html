@@ -10,7 +10,7 @@
 <div class="mb-3 "
      style=" flex-direction: column; margin: 2rem auto; width: 1000px; border:solid 1px; border-radius: 15px ;display: flex; justify-content: center; align-items: center">
     <h1 style="margin-top: 2rem" th:text="'Oh, la belle prise.'"/>
-    <p th:text="'Vous avez fait ' + ${dado}'.'"/>
+    <p th:text="'Vous avez fait ' + ${dado}+' et êtes sur la case '+${position}+'.'"/>
     <p th:text="'Il y a une arme par terre ! Cest un '  + ${actual_cell.type}"> </p>
 
     <p th:text="'Vie du héros : '  + ${life}"> </p>

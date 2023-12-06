@@ -86,29 +86,33 @@ public class GameController {
     @GetMapping("/game")
     public String game(Model model) {
         model.addAttribute("start_game_title", "C'EST PARTI FUME LES ENNEMIS !");
-        Cell response = restTemplate.getForObject("http://172.22.114.69:8082/play/4", Cell.class);
-        // dado
-        int dado = restTemplate.getForObject("http://172.22.114.69:8082/dado", int.class);
+        Cell cell = restTemplate.getForObject("http://172.22.114.69:8082/play/4", Cell.class);
+
         Cell hero = restTemplate.getForObject("http://172.22.114.69:8082/start/hero", Cell.class);
 
-        model.addAttribute("life", hero.getPoint_de_vie());
-        model.addAttribute("position", hero);
-        model.addAttribute("actual_cell", response);
+        int dado = restTemplate.getForObject("http://172.22.114.69:8082/dado", int.class);
+        int life = restTemplate.getForObject("http://172.22.114.69:8082/4/life", int.class);
+        int position = restTemplate.getForObject("http://172.22.114.69:8082/4/position", int.class);
+
+
+        model.addAttribute("life", life);
+        model.addAttribute("position", position);
+        model.addAttribute("actual_cell", cell);
         model.addAttribute("dado", dado);
 
-        if (hero.getPoint_de_vie() <= 0){
+        if (life <= 0){
             return "death";
         }
 
-        if (response.getType().equals("empty cell")){
+        if (cell.getType().equals("empty cell")){
             return "empty_cell";
-        } else if (response.getType().equals("potion")) {
+        } else if (cell.getType().equals("potion")) {
             return "potion";
-        } else if (response.getType().equals("spell")) {
+        } else if (cell.getType().equals("spell")) {
             return "spell";
-        } else if (response.getType().equals("weapon")) {
+        } else if (cell.getType().equals("weapon")) {
             return "weapon";
-        } else if (response.getType().equals("gobelin") || response.getType().equals("dragon") ||response.getType().equals("sorcier")) {
+        } else if (cell.getType().equals("gobelin") || cell.getType().equals("dragon") ||cell.getType().equals("sorcier")) {
             return "ennemy";
         }
 
