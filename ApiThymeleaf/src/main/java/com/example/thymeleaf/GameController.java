@@ -1,5 +1,6 @@
 package com.example.thymeleaf;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -63,6 +65,14 @@ public class GameController {
             HeroForm response = restTemplate.postForObject("http://172.22.114.55:8081/api/hero", heroForm, HeroForm.class);
 
         return "created_player";
+    }
+
+    @GetMapping("/start")
+    public String start(Model model){
+        model.addAttribute("start_game_title", "Voici votre héros :");
+        ResponseEntity<String> response = restTemplate.getForEntity("http://172.22.114.69:8082/start/hero", String.class);
+        model.addAttribute("hero", response.getBody());
+        return "start";
     }
 
 }
