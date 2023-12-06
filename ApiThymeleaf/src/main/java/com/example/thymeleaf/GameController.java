@@ -26,6 +26,8 @@ public class GameController {
 
     @GetMapping("/home")
     String getGame(Model model) {
+        ResponseEntity reset = restTemplate.getForEntity("http://172.22.114.55:8081/4/reboot", ResponseEntity.class);
+
         model.addAttribute("title", "Donjons & Dragons");
         model.addAttribute("welcome", "Bienvenue sur le jeu DND de Massimo, Nathalie et Maxime.");
 
@@ -99,6 +101,10 @@ public class GameController {
         model.addAttribute("position", position);
         model.addAttribute("actual_cell", cell);
         model.addAttribute("dado", dado);
+
+        if (position > 63){
+            return "stop";
+        }
 
         if (life <= 0){
             return "death";
