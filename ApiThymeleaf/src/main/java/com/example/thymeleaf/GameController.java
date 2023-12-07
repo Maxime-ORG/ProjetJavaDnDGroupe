@@ -26,7 +26,7 @@ public class GameController {
 
     @GetMapping("/home")
     String getGame(Model model) {
-        ResponseEntity reset = restTemplate.getForEntity("http://172.22.114.55:8081/4/reboot", ResponseEntity.class);
+        ResponseEntity reset = restTemplate.getForEntity("http://172.22.114.69:8082/4/reboot", ResponseEntity.class);
 
         model.addAttribute("title", "Donjons & Dragons");
         model.addAttribute("welcome", "Bienvenue sur le jeu DND de Massimo, Nathalie et Maxime.");
@@ -76,7 +76,7 @@ public class GameController {
 
     @GetMapping("/start")
     public String start(Model model) {
-        model.addAttribute("start_game_title", "Voici votre héros :");
+        model.addAttribute("start_game_title", "Voici votre héros : ");
         Cell response = restTemplate.getForObject("http://172.22.114.69:8082/start/hero", Cell.class);
 
         model.addAttribute("hero", response);
