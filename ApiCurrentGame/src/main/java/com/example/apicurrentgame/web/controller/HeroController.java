@@ -88,7 +88,8 @@ public class HeroController {
         List<Hero> heroes = mapper.readValue(allHero, new TypeReference<List<Hero>>() {
         });
 
-        Hero lasthero = heroes.getFirst();
+        Hero lasthero = heroes.getLast();
+        lasthero.setId(id);
         heroDao.save(lasthero);
     }
 

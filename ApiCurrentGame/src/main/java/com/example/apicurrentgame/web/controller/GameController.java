@@ -98,14 +98,13 @@ public class GameController {
         });
         Enemy enemy = restTemplate.getForObject("http://172.22.114.55:8081/api/enemy/" + cell.get(hero.getPosition()).getId(), Enemy.class);
 
+
         while (enemy.getPoint_de_vie() > 0 && hero.getPoint_de_vie() > 0) {
             enemy.setPoint_de_vie(enemy.getPoint_de_vie() - hero.getForce_attaque());
             if (enemy.getPoint_de_vie() > 0) {
                 restTemplate.put("http://localhost:8082/hero/" + game.getIdHero() + "/dmg/" + enemy.getForce_attaque(), Hero.class);
             }
         }
-
-
 
         return enemy.toString();
     }
@@ -198,9 +197,5 @@ public class GameController {
     @GetMapping("/dado")
     public int getDado() {
         return dado;
-    }
-
-    private void fight() {
-        System.out.println("1V1 sans règles");
     }
 }
