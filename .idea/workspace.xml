@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="99f84fd4-ca44-4ced-9528-9aa430099938" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ApiGameInitiatio/src/main/java/com/example/apigameinitiation/controller/EnemyController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApiGameInitiatio/src/main/java/com/example/apigameinitiation/dao/EnemyDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApiGameInitiatio/src/main/java/com/example/apigameinitiation/model/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiGameInitiatio" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGameInitiatio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiGameInitiatio/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGameInitiatio/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiGameInitiatio/src/main/java/com/example/coneccionmysql/ConeccionMySqlApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGameInitiatio/src/main/java/com/example/apigameinitiation/ApiGameInitiation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiGameInitiatio/src/main/java/com/example/coneccionmysql/controller/PersonnageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGameInitiatio/src/main/java/com/example/apigameinitiation/controller/HeroController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiGameInitiatio/src/main/java/com/example/coneccionmysql/dao/PersonnageDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGameInitiatio/src/main/java/com/example/apigameinitiation/dao/HeroDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiGameInitiatio/src/main/java/com/example/coneccionmysql/model/Personnage.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGameInitiatio/src/main/java/com/example/apigameinitiation/model/Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiGameInitiatio/src/main/java/com/example/coneccionmysql/service/PersonageServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiGameInitiatio/src/main/java/com/example/coneccionmysql/service/PersonnageService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiGameInitiatio/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGameInitiatio/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiGameInitiatio/src/test/java/com/example/coneccionmysql/ConeccionMySqlApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGameInitiatio/src/test/java/com/example/apigameinitiation/ApiGameInitiationTests.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2ZD1ivnXHFlD4mksQMo3y5gaCk8" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "final",
+    "last_opened_file_path": "C:/Users/nathalie.soto.EDG/Desktop/ProjetJavaDnDGroupe",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="99f84fd4-ca44-4ced-9528-9aa430099938" name="Changes" comment="" />
+      <created>1701941967131</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1701941967131</updated>
+      <workItem from="1701941968595" duration="516000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
