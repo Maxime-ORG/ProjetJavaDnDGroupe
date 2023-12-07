@@ -75,16 +75,29 @@ public class GameController {
             ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
             String json = ow.writeValueAsString(cell.get(hero.getPosition()));
             return json;
-        } else if (cell.get(hero.getPosition()).getType().equalsIgnoreCase("potion") || cell.get(hero.getPosition()).getType().equalsIgnoreCase("spell") || cell.get(hero.getPosition()).getType().equalsIgnoreCase("weapon")) {
+        } else if (cell.get(hero.getPosition()).getType().equalsIgnoreCase("spell") || cell.get(hero.getPosition()).getType().equalsIgnoreCase("weapon")) {
             ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
             String json = ow.writeValueAsString(cell.get(hero.getPosition()));
+            return json;
+        } else if (cell.get(hero.getPosition()).getType().equalsIgnoreCase("potion")) {
+            ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+            String json = ow.writeValueAsString(cell.get(hero.getPosition()));
+            restTemplate.getForObject("http://localhost:8082/play/" + gameID + "/potion", String.class);
             return json;
         }
         return "???";
     }
 
+    @GetMapping("/play/{gameID}/potion")
+    public void usePotion(@PathVariable int gameID) throws JsonProcessingException {
+        RestTemplate restTemplate = new RestTemplate();
+        Game game = restTemplate.getForObject("http://localhost:8082/game/" + gameID, com.example.apicurrentgame.model.Game.class);
+        Hero hero = restTemplate.getForObject("http://localhost:8082/hero/" + game.getIdHero(), com.example.apicurrentgame.model.Hero.class);
+
+        restTemplate.put("http://localhost:8082/hero/" + game.getIdHero() + "/lifeUp/" + 5, Hero.class);
+    }
     @GetMapping("/play/{gameID}/fight")
-    public String getBoards(@PathVariable int gameID) throws JsonProcessingException {
+    public String fight(@PathVariable int gameID) throws JsonProcessingException {
         RestTemplate restTemplate = new RestTemplate();
 
         Game game = restTemplate.getForObject("http://localhost:8082/game/" + gameID, com.example.apicurrentgame.model.Game.class);

@@ -70,7 +70,7 @@ public class HeroController {
         heroDao.save(personnage1.get());
     }
 
-    @PutMapping("/PersonnageRecupereVie/{id}/{vie}")
+    @PutMapping("/hero/{id}/lifeUp/{vie}")
     public void PersonnageRecupereVie(@PathVariable int id, @PathVariable int vie) {
         Optional<Hero> personnage1 = heroDao.findById(id);
         personnage1.get().setPoint_de_vie(personnage1.get().getPoint_de_vie()+vie);
