@@ -33,4 +33,12 @@ public class Cell {
     public void setType(String type) {
         this.type = type;
     }
+
+    @Override
+    public String toString() {
+        return "Cell{" +
+                "id=" + id +
+                ", type='" + type + '\'' +
+                '}';
+    }
 }
