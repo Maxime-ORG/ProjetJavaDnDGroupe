@@ -8,6 +8,7 @@
       <change afterPath="$PROJECT_DIR$/ApiGameInitiatio/src/main/java/com/example/apigameinitiation/controller/EnemyController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ApiGameInitiatio/src/main/java/com/example/apigameinitiation/dao/EnemyDao.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ApiGameInitiatio/src/main/java/com/example/apigameinitiation/model/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ApiGameInitiatio" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGameInitiatio" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ApiGameInitiatio/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGameInitiatio/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ApiGameInitiatio/src/main/java/com/example/coneccionmysql/ConeccionMySqlApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGameInitiatio/src/main/java/com/example/apigameinitiation/ApiGameInitiation.java" afterDir="false" />
@@ -46,6 +47,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -57,7 +59,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1701941967131</updated>
-      <workItem from="1701941968595" duration="516000" />
+      <workItem from="1701941968595" duration="1180000" />
     </task>
     <servers />
   </component>
