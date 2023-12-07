@@ -2,7 +2,5 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/ApiBoard" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/ApiOffensive" vcs="Git" />
   </component>
 </project>
